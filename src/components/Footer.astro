@@ -1,8 +1,83 @@
 ---
+import ImgWrap from "./basic/ImgWrap.astro";
+
 ---
 
 <footer class="footer">
-	<div class="container footer__container">
+	<div class="footer__bg-wrap">
+		<ImgWrap className="footer__bg" cover>
+			<img src="img/footer-bg.webp" alt="InGames" class="footer__bg-img">
+		</ImgWrap>
+	</div>
+	<div class="footer__inner">
+		<img src="img/cube-decor-red.webp" class="footer__decor footer__decor_red"></img>
+		<img src="img/cube-decor-blue.webp" class="footer__decor footer__decor_blue"></img>
+		<img src="img/cube-decor-green.webp" class="footer__decor footer__decor_green"></img>
+		<img src="img/cube-decor-orange.webp" class="footer__decor footer__decor_orange"></img>
+		<div class="container footer__container">
+			<div class="footer__content">
+				
+				<a href="/" class="footer__logo logo">
+					<img src="img/logo.svg" alt="InGames" class="logo__image">
+				</a>
+				<!-- Explore Section -->
+				<div class="footer__section footer__section_nav">
+					<h2 class="footer__title">Explore</h2>
+					<nav class="footer__nav_main footer-nav">
+						<ul class="footer-nav__list">
+							<li class="footer-nav__item">
+								<a href="/" class="footer-nav__link text-link">Home</a>
+							</li>
+							<li class="footer-nav__item">
+								<a href="/about" class="footer-nav__link text-link">About</a>
+							</li>
+							<li class="footer-nav__item">
+								<a href="/apps" class="footer-nav__link text-link">Apps</a>
+							</li>
+							<li class="footer-nav__item">
+								<a href="/philosophy" class="footer-nav__link text-link">Philosophy</a>
+							</li>
+							<li class="footer-nav__item">
+								<a href="/team" class="footer-nav__link text-link">Team</a>
+							</li>
+							<li class="footer-nav__item">
+								<a href="/career" class="footer-nav__link text-link">Career</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
 
+				<!-- Keep in touch Section -->
+				<div class="footer__section footer__section_subscribe">
+					<h2 class="footer__title">Keep in touch</h2>
+					<form name="subscribe" class="footer__subscribe subscribe">
+						<span class="icon-email subscribe__icon"></span>
+						<input 
+							name="email"
+							type="email"
+							class="subscribe__input" 
+							placeholder="Email address"
+							required
+						>
+						<button type="submit" class="btn btn_primary subscribe__submit">Subscribe</button>
+					</form>
+					<nav class="footer__nav_policy footer-nav">
+						<ul class="footer-nav__list">
+							<li class="footer-nav__item">
+								<a href="/privacy-policy" class="footer-nav__link text-link">Privacy Policy</a>
+							</li>
+							<li class="footer-nav__item">
+								<a href="/terms" class="footer-nav__link text-link">Terms of Service</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<div class="footer__copyright">
+			<div class="container">
+				Copyright © inGames 2024 · All Rights Reserved
+			</div>
+		</div>
 	</div>
 </footer>

@@ -1,77 +1,190 @@
 @use "./config.scss" as config;
+@use "./mixins.scss" as mixins;
 .footer {
-	color: var(--text-main-invert);
-	background-color: var(--sf-deep-dark);
-	padding: 60px 0 46px;
-	&__container {
+	position: relative;
+	left: 0;
+	top: 0;
+	--color: white;
+	color: var(--color);
+	&__bg-wrap {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+	&__inner {
+		position: relative;
+		margin: -100px 0 0;
+		padding: 100px 0 0;
+		overflow: hidden;
+	}
+	&__decor {
+		position: absolute;
+		width: var(--size);
+		height: var(--size);
+		@media (max-width: config.$mbpT) {
+			display: none;
+		}
+		&_red {
+			--size: 77px;
+			transform: rotate(30deg);
+			bottom: 60px;
+			@include mixins.aval(right, 127, 70, "both", 800, 1920);
+		}
+		&_blue {
+			--size: 85px;
+			bottom: 204px;
+			transform: rotate(-30deg);
+			@include mixins.aval(left, 50, 110, "both", 800, 1920);
+		}
+		&_green {
+			--size: 128px;
+			top: 60px;
+			transform: rotate(-33.47deg);
+			@include mixins.aval(right, 28, 134, "both", 800, 1920);
+		}
+		&_orange {
+			--size: 65px;
+			bottom: 144px;
+			transform: rotate(30deg);
+			@include mixins.aval(left, 145, 200, "both", 800, 1920);
+		}
+	}
+	&__bg {
+		--height-ratio: 65%;
+		position: absolute;
+		left: 50%;
+		bottom: -50%;
+		width: 100%;
+		min-width: 1920px;
+		z-index: -1;
+		transform: translateX(-50%);
+		@media (max-width: config.$mbpT) {
+			bottom: 0;
+		}
+	}
+	&__logo {
+		display: inline-block;
+		width: 193px;
+		height: 32px;
+		@media (max-width: config.$mbpT) {
+			width: 346px;
+			height: 56px;
+		}
+		@media (max-width: config.$mbpM) {
+			width: 260px;
+			height: 48px;
+		}
+	}
+	&__content {
+		position: relative;
 		display: grid;
-		grid-auto-flow: column;
-		gap: 40px;
-		justify-content: space-between;
-		@media (max-width: config.$mbpFooterCollapse) {
-			grid-auto-flow: row;
-			grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: 1fr auto auto;
+		gap: 56px 130px;
+		padding-top: 56px;
+		padding-bottom: 100px;
+		@media (max-width: 1600px) {
+			padding-top: 82px;
 		}
-		@media (max-width: config.$mbpM) {
-			grid-template-columns: 1fr 1fr;
-		}
-		@media (max-width: config.$mbpMM) {
+		@media (max-width: config.$mbpT) {
 			grid-template-columns: 1fr;
+			padding-bottom: 50px;
 		}
 	}
-	&__contacts {
-		@media (max-width: config.$mbpFooterCollapse) {
-			grid-column: 1/ span 2;
-		}
-		@media (max-width: config.$mbpM) {
-			grid-column: auto/ span 1;
-		}
-	}
-	&__tel {
-		--hover-color: var(--text-secondary-light);
-	}
-	&__terms {
-		display: inline-grid;
-		align-content: start;
-		gap: 24px;
-		@media (max-width: config.$mbpFooterCollapse) {
-			align-self: end;
-		}
-		@media (max-width: config.$mbpMM) {
-			gap: 14px;
-		}
-	}
-}
-.footer-menu-group {
 	&__title {
-		margin-bottom: 36px;
+		font-family: Raleway;
+		font-size: 24px;
+		font-weight: 700;
+		line-height: 1.25;
+	}
+	&__section_nav &__title {
+		margin-bottom: 40px;
+	}
+	&__section_subscribe &__title {
+		margin-bottom: 24px;
+	}
+	&__copyright {
+		font-family: Poppins;
+		font-size: 16px;
+		line-height: 1.5;
+		padding: 33px 0;
+		border-top: 1px solid #FFFFFF4D;
 		@media (max-width: config.$mbpT) {
-			margin-bottom: 22px;
+			padding: 45px 0;
 		}
 	}
-	&__list {
-		display: inline-grid;
-		gap: 16px;
+	&__subscribe {
+		margin-bottom: 30px;
 		@media (max-width: config.$mbpT) {
-			gap: 12px;
+			margin-bottom: 56px;
 		}
 	}
 }
-
-.footer-contacts {
-	display: inline-grid;
-	align-content: start;
-	justify-items: start;
-	gap: 24px;
-	@media (max-width: config.$mbpT) {
-		gap: 18px;
-	}
-	@media (max-width: config.$mbpMM) {
-		gap: 14px;
-	}
-}
-.social-media {
+.subscribe {
 	display: inline-grid;
 	grid-auto-flow: column;
-	gap: 16px;
+	align-items: center;
+	gap: 8px;
+	min-width: 346px;
+	color: #00000059;
+	background-color: #FFFFFF;
+	padding: 13px;
+	border-radius: 15px;
+	@media (max-width: config.$mbpM) {
+		padding: 4px;
+		border-radius: 8px;
+		min-width: 260px;
+		min-height: 50px;
+	}
+	&__icon {
+		font-size: 30px;
+		margin: 4px;
+		@media (max-width: config.$mbpM) {
+			font-size: 24px;
+		}
+	}
+	&__input {
+		font-family: Poppins;
+		font-size: 16px;
+		line-height: 1.5;
+		min-width: 0;
+		width: 150px;
+		@media (max-width: config.$mbpM) {
+			font-size: 14px;
+			width: 100px;
+		}
+	}
+	&__submit {
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 1.3;
+		padding: 9px 15px;
+		border-radius: 6px;
+		@media (max-width: config.$mbpM) {
+			font-size: 14px;
+			padding: 12.5px 15px;
+		}
+	}
+}
+.footer-nav {
+	font-family: Raleway;
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 2;
+	@media (max-width: config.$mbpT) {
+		line-height: 2.5;
+	}
+	@media (max-width: config.$mbpM) {
+		font-size: 16px;
+	}
+	&__list {
+		display: grid;
+	}
+	&__item {
+	}
+	&__link {
+		--hover-color: #ffffffcb;
+	}
 }

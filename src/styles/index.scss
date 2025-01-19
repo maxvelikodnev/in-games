@@ -6,3 +6,211 @@
 @use "./framework.scss";
 @use "./header.scss";
 @use "./footer.scss";
+
+@use "./config.scss" as config;
+@use "./mixins.scss" as mixins;
+
+:root {
+	font-family: "Raleway";
+}
+.hero {
+	position: sticky;
+	left: 0;
+	top: 0;
+	z-index: 0;
+	height: calc(var(--vh, 1vh) * 100);
+	max-height: 1600px;
+	overflow: hidden;
+	transition: height 0.3s ease-in-out;
+	&__bg {
+		--height-ratio: max(190%, calc(var(--vh, 1vh) * 100));
+		position: absolute;
+		left: 0;
+		top: 0;
+		max-height: 100%;
+		width: 100%;
+		z-index: -1;
+		overflow: hidden;
+	}
+	&__title {
+		position: absolute;
+		visibility: hidden;
+	}
+	&__msg {
+		position: relative;
+		left: 0;
+		top: 0;
+		z-index: 2;
+		font-size: min(18vw, 10vh);
+		margin-bottom: 20px;
+	}
+	&__about {
+		position: relative;
+		//z-index: 3;
+		color: #FFFFFFCC;
+		font-family: Poppins;
+		font-size: 24px;
+		font-weight: 400;
+		line-height: 1.5;
+		max-width: 542px;
+		text-align: center;
+		@media (max-width: 768px) {
+			max-width: 460px;
+			font-size: 20px;
+		}
+		@media (max-width: 520px) {
+			max-width: 80vw;
+			font-size: 16px;
+		}
+	}
+	&__underlay {
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+		background-color: #000000;
+		opacity: 0;
+		visibility: hidden;
+	}
+	&__container {
+		display: grid;
+		justify-items: center;
+		align-content: start;
+		position: relative;
+		left: 0;
+		top: 0;
+		min-height: 100%;
+		padding-top: max(100px, 12vh);
+	}
+	&__decorations {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 2;
+	}
+	&__decor {
+		position: absolute;
+		width: var(--size);
+		height: var(--size);
+		font-size: min(7.5vw, 8vh);
+		&_red {
+			--size: 1.74em;
+			top: 40%;
+			right: -6.5%;
+			transform: rotate(30deg);
+			@media (max-width: 1280px) {
+				top: 33%;
+				right: -0.5%;
+			}
+		}
+		&_blue {
+			--size: 1.74em;
+			bottom: 10%;
+			left: -2%;
+			transform: rotate(-30deg);
+			@media (max-width: 1280px) {
+				bottom: 24%;
+			}
+		}
+		&_green {
+			--size: 1.28em;
+			bottom: 10%;
+			right: 5%;
+			transform: rotate(30deg) translate(-50%, -50%);
+			@media (max-width: 1280px) {
+				bottom: 22%;
+			}
+		}
+		&_orange {
+			top: 19.5%;
+			left: -6%;
+			--size: 1.12em;
+			transform: rotate(30deg);
+			@media (max-width: 1280px) {
+				top: 30.5%;
+				left: 3%;
+			}
+		}
+	}
+	&__all-heros {
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		font-size: min(110vw, 75vh);
+		width: 1em;
+		height: 0.49em;
+		transform: translateX(-50%);
+
+	}
+	&__bottom-decor-wrap {
+		display: flex;
+		justify-content: center;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		z-index: -1;
+	}
+	&__bottom-decor {
+		--height-ratio: 18.49%;
+		margin: auto;
+		margin-bottom: calc(-270px + 10vh);
+		width: 101%;
+		min-width: 1600px;
+	}
+}
+.hero-msg {
+	transform-origin: center top;
+	&__inner {
+		display: inline-grid;
+		align-content: start;
+		justify-items: center;
+		color: white;
+		font-family: Raleway;
+		font-weight: 900;
+		line-height: 1.1343;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+	&__text {
+		&_are {
+		}
+		&_in {
+		}
+	}
+	&__seo-part {
+		position: absolute;
+		visibility: hidden;
+	}
+	&__img {
+		width: 3.67em;
+		height: 1.54em;
+		margin-bottom: 0.18em;
+	}
+	&__head {
+	}
+	&__eye {
+	}
+	&__y {
+	}
+	&__u {
+	}
+}
+.all-heros {
+	&__main {
+		width: 100%;
+		height: 100%;
+	}
+	&__eyes {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 13%;
+		left: 38.7%;
+		top: 68.4%;
+	}
+}
