@@ -4,7 +4,9 @@
 	position: relative;
 	left: 0;
 	top: 0;
+	z-index: 2;
 	--color: white;
+	pointer-events: none;
 	color: var(--color);
 	&__bg-wrap {
 		position: absolute;
@@ -19,6 +21,9 @@
 		margin: -100px 0 0;
 		padding: 100px 0 0;
 		overflow: hidden;
+		& > * {
+			pointer-events: all;
+		}
 	}
 	&__decor {
 		position: absolute;

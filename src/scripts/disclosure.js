@@ -3,6 +3,7 @@ import throttle from "lodash.throttle";
 const createObserver = () => {
 	const mapByInner = new Map();
 	const updateHeight = (instance, target) => {
+		if (!target) return;
 		const targetBcr = target.getBoundingClientRect();
 		instance.updateInnerHeightStyle(targetBcr.height);
 	}

@@ -35,6 +35,26 @@
 		--bg-color: #8F33FF;
 		--hover-bg-color: #8f33ffe0;
 	}
+	&_market {
+		border-radius: 6px;
+		overflow: hidden;
+		padding: 0;
+		width: 180px;
+		height: 52px;
+	}
+	&_market &__bg {
+		position: relative;
+		left: -1%;
+		top: -1%;
+		width: 102%;
+		height: 102%;
+		object-fit: cover;
+		--hover-opacity: 0.6;
+	}
+	&_market {
+		border: 1px solid transparent;
+		--hover-border-color: white;
+	}
 	@media (any-hover: hover) {
 		&:hover {
 			color: var(--hover-color, var(--color));
@@ -203,6 +223,12 @@
 		height: 100%;
 		object-fit: contain;
 	}
+	&_cut img, &_cut &__item {
+		left: -0.5%;
+		top: -0.5%;
+		width: 101%;
+		height: 101%;
+	}
 	&_top-left img, &_top-left &__item {
 		object-position: top left;
 	}
@@ -219,4 +245,56 @@
 	&._open > &__body {
 		height: var(--inner-height);
 	}
+
+	&_vacancy-card {
+		background-color: #FFFFFF;
+		border: 1px solid #E0E3EC;
+		border-radius: 10px;
+		padding: 24px 18px;
+	}
+	&__header {
+		cursor: pointer;
+	}
+	&_vacancy-card &__header {
+		display: flex;
+		justify-content: space-between;
+		gap: 30px;
+	}
+	&__title {
+		font-family: Raleway;
+		font-size: 32px;
+		font-weight: 800;
+		line-height: 1.1;
+		letter-spacing: 0.01em; 
+	}
+	&_vacancy-card &__inner {
+		padding-top: 24px;
+	}
+	&_vacancy-card  &__icon {
+		display: grid;
+		align-items: center;
+		justify-content: center;
+		width: 30px;
+		height: 30px;
+		&::before, &::after {
+			content: "";
+			grid-column: 1/span 1;
+			grid-row: 1/span 1;
+			display: inline-block;
+			width: 14px;
+			height: 2px;
+			border-radius: 2px;
+			background-color: currentColor;
+			transition: transform 0.3s;
+		}
+		&::before {
+			transform: rotate(90deg);
+		}
+	}
+	&_vacancy-card._open &__icon::before {
+		transform: rotate(0);
+	}
+}
+section {
+	background-color: white;
 }

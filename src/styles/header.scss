@@ -10,6 +10,15 @@
 	background-clip: padding-box;
 	border: 2px solid transparent;
 	transition: background-color 0.3s;
+	html._scrolled &:not(.drawer_open) {
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+		background-color: #FFFFFF1A;
+	}
+	@media (max-width: config.$mbpT) {
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+	}
 	@media (max-width: config.$mbpT) {
 		background-color: #FFFFFF1A;
 		border-color: #FFFFFF66;
@@ -19,6 +28,7 @@
 		&.drawer_open {
 			--color: #312929;
 			background-color: white;
+			border-color: white;
 		}
 	}
 	&__container {
@@ -36,10 +46,14 @@
 	&__logo {
 		width: 193px;
 		height: 32px;
+		transition: filter 0.3s;
 		@media (max-width: config.$mbpM) {
 			width: 162px;
 			height: 28px;
 		}
+	}
+	html._dark-header &__logo {
+		filter: invert(1);
 	}
 	@media (max-width: config.$mbpT) {
 		&.drawer_open &__logo {
@@ -49,6 +63,9 @@
 	&__menu-btn {
 		color: #FFF;
 		margin: 0 -12px 0 0;
+		html._dark-header & {
+			color: black;
+		}
 		@media (min-width: (config.$mbpT + 1px)) {
 			position: absolute;
 			visibility: hidden;
@@ -144,6 +161,9 @@
 		background-color: #FFFFFF1A;
 		border: 1px solid #FFFFFF66;
 		border-radius: 20px;
+		@media (min-width: (config.$mbpT + 1px)) {
+			backdrop-filter: blur(10px);
+		}
 		@media (max-width: config.$mbpT) {
 			gap: 0px;
 			background-color: transparent;
@@ -153,6 +173,16 @@
 		}
 	}
 	&__item {
+		
+	}
+	
+	@media (max-width: config.$mbpT) {
+		.drawer_open &__link._active {
+			background-color: #F3F1FD;
+		}
+	}
+	&__link {
+		display: block;
 		--color: #FFFFFFCC;
 		--hover-color: #FFF;
 		--active-color: #FFF;
@@ -161,28 +191,27 @@
 		line-height: 1.5;
 		@media (max-width: config.$mbpT) {
 			--color: #312929;
-			--hover-color: black;
-			--active-color: black;
+			--hover-color: #8F33FF;
+			--active-color: #8F33FF;
 			transition: background-color 0.3s;
 			background-color: transparent;
-		}
-	}
-	@media (max-width: config.$mbpT) {
-		.drawer_open &__item_active {
-			background-color: #F3F1FD;
-		}
-	}
-	&__link {
-		display: block;
-		@media (max-width: config.$mbpT) {
 			padding: 18px var(--container-save-space);
 		}
-
 	}
-	&__item_active {
+	&__link._active {
 		--color: #FFF;
+		--active-color: #FFF;
 		@media (max-width: config.$mbpT) {
-			--color: black;
+			--color: #8F33FF;
+		}
+	}
+	html._dark-header &__link {
+		--color: #312929;
+		--hover-color: #8F33FF;
+		--active-color: #8F33FF;
+		&._active {
+			--color: #8F33FF;
+			--active-color: #8F33FF;
 		}
 	}
 	

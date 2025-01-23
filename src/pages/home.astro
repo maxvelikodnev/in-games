@@ -4,10 +4,13 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="InGames" description="InGames website">
-	<div id="hero" class="hero">
-		<ImgWrap className='hero__bg' cover>
+	<section id="hero" class="hero">
+		<!-- <ImgWrap className='hero__bg' cover>
 			<img src="img/hero-bg.webp" alt="InGames" class="hero__bg-image">
-		</ImgWrap>
+		</ImgWrap> -->
+		<div class="hero__bg">
+			<video src="vid_1080p.mp4" muted autoplay loop playsinline></video>
+		</div>
 		<div class="hero__underlay"></div>
 		<div class="container hero__container">
 			<h1 class="hero__title">
@@ -65,10 +68,736 @@ import Layout from '../layouts/Layout.astro';
 				<img src="img/hero-bottom-decor.svg"></img>
 			</ImgWrap>
 		</div>
-	</div>
+	</section>
+	<section id="about" class="about-us section-space-top">
+		<div class="about-us__header">
+			<div class="container about-us__header-container">
+				<h2 class="about-us__title section-title">
+					About <div class="section-title__decorated">
+						<img src="img/us-decor.svg" alt="About us decor" class="section-title__decor section-title__decor_us">
+						us
+					</div>
+				</h2>
+				<ul class="about-us__services">
+					<li class="service-item">
+						<img src="img/service-decor.svg" alt="Service item decor" class="service-item__decor">
+						<div class="service-item__title">Visual design</div>
+					</li>
+					<li class="service-item">
+						<img src="img/service-decor.svg" alt="Service item decor" class="service-item__decor">
+						<div class="service-item__title">Art</div>
+					</li>
+					<li class="service-item">
+						<img src="img/service-decor.svg" alt="Service item decor" class="service-item__decor">
+						<div class="service-item__title">UI/UX</div>
+					</li>
+					<li class="service-item">
+						<img src="img/service-decor.svg" alt="Service item decor" class="service-item__decor">
+						<div class="service-item__title">Game development</div>
+					</li>
+					<li class="service-item">
+						<img src="img/service-decor.svg" alt="Service item decor" class="service-item__decor">
+						<div class="service-item__title">Illustration</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="about-us__body">
+			<picture>
+				<source srcset="img/about-us-bg-tablet.webp" media="(max-width: 1160px)" />
+				<img src="img/about-us-bg.webp" alt="About us section background" class="about-us__body-bg">
+			</picture>
+			<img src="img/about-us-overlay-decor.svg" alt="About us section background" class="about-us__overlay-decor">
+			<div class="container about-us__container">
+				<div class="about-us__img-area about-us__img-area_1">
+					<div class="about-us-img about-us-img_1 about-us__img about-us__img_1">
+						<ImgWrap className='about-us-img__img img-wrap_cut'>
+							<img src="img/about-us-01.jpg" alt="About Us 01">
+						</ImgWrap>
+					</div>
+				</div>
+				<div class="about-us__info-group">
+					<div class="about-info">
+						<h3 class="about-info__title">Our Journey<br>Begins</h3>
+						<div class="about-info__body">
+							Founded in 2023, InGames crafts innovative games that unite like-minded individuals. Our passionate team creates captivating worlds rich in story and fun.
+						</div>
+					</div>
+					<div class="about-info">
+						<h3 class="about-info__title">Connecting<br>Through Gaming</h3>
+						<div class="about-info__body">
+							We believe gaming is a powerful medium for forging connections and sparking creativity. Our games blend cutting-edge technology with engaging narratives for all players.
+						</div>
+					</div>
+				</div>
+				<blockquote class="quote about-us__quote">
+					<img src="img/quote.svg" alt="Quotes img" class="quote__quote">
+					<p class="quote__text">
+						Every game we develop is designed with meticulous attention to detail, blending 
+						<b>cutting-edge</b> technology with engaging narratives that 
+						<b>speak to players</b> of all backgrounds.
+					</p>
+				</blockquote>
+				<div class="about-us__img-area about-us__img-area_2">
+					<div class="about-us-img about-us-img_2 about-us__img about-us__img_2">
+						<ImgWrap className='about-us-img__img img-wrap_cut'>
+							<img src="img/about-us-02.jpg" alt="About Us 02">
+						</ImgWrap>
+					</div>
+				</div>
+				<div class="about-us__img-area about-us__img-area_3">
+					<div class="about-us-img about-us-img_3 about-us__img about-us__img_3">
+						<img src="img/about-us-img-decor.svg" alt="Image decod" class="about-us-img__decor">
+						<ImgWrap className='about-us-img__img img-wrap_cut'>
+							<img src="img/about-us-03.jpg" alt="About Us 03">
+						</ImgWrap>
+					</div>
+				</div>
+				<div class="about-info">
+					<h3 class="about-info__title">Building<br>Community</h3>
+					<div class="about-info__body">
+						We push gaming boundaries, exploring diverse themes that challenge conventions. InGames fosters a vibrant community where everyone can share experiences.
+					</div>
+				</div>
+				<div class="about-info">
+					<h3 class="about-info__title">Join Our<br>Adventure</h3>
+					<div class="about-info__body">
+						Our mission is to create shared adventures that inspire collaboration. Join us as we explore new frontiers and build a world where imagination knows no limits.
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="apps" class="our-apps">
+		<div class="our-apps__container">
+			<h2 class="our-apps__title section-title">
+				Our <div class="section-title__decorated">
+					<img src="img/apps-bg.svg" alt="About us decor" class="section-title__decor section-title__decor_apps">
+					Apps
+				</div>
+			</h2>
+			<div class="our-apps__body">
+				<div class="our-apps-card our-apps-card_mt">
+					<div class="our-apps-card__main-pics">
+						<ImgWrap className='our-apps-card__bg img-wrap_cover'>
+							<img src="img/apps-slide-01-bg.webp" alt="Monstertopia Background">
+						</ImgWrap>
+						<ImgWrap className='our-apps-card__bg-overlay img-wrap_cover'>
+							<picture>
+								<source srcset="img/apps-slide-01-bg-overlay-mob.webp" media="(max-width: 1200px)"/>
+								<img src="img/apps-slide-01-bg-overlay.webp" alt="Monstertopia Background Overlay">
+							</picture>
+						</ImgWrap>
+						<!-- Movable objects -->
+						 <div class="our-apps-card__object our-apps-card__object_1">
+							<img src="img/apps-slide-01-bush.webp" alt="Monstertopia bush">
+						</div>
+						<div class="our-apps-card__object our-apps-card__object_2">
+							<img src="img/apps-slide-01-tree.webp" alt="Monstertopia tree">
+						</div>
+						<div class="our-apps-card__object our-apps-card__object_3">
+							<img src="img/mt-monster-01.webp" alt="Monstertopia monster">
+						</div>
+						<div class="our-apps-card__object our-apps-card__object_4">
+							<img src="img/mt-monster-02.webp" alt="Monstertopia monster">
+						</div>
+					</div>
+					<div class="our-apps-card__object our-apps-card__object_5">
+						<img src="img/mt-monster-03.webp" alt="Monstertopia monster">
+					</div>
+					<div class="our-apps-card__inner">
+						<div class="our-apps-card__info">
+							<div class="our-apps-card__info-header">
+								<h3 class="our-apps-card__title">Monstertopia:<br>Tower Defense</h3>
+							</div>
+							<div class="our-apps-card__text">
+								Join the fight against invading forcesin Monstertopia! Defend your tower and protect your kingdom from relentless waves of enemies. Assemble your heroes and deploy them tactfully on the battlefield to create defensive lines, turrets, and armaments. Intense battles await you. Show off your strategy as you keep enemy forces at bay in Monstertopia.
+							</div>
+						</div>
+						<div class="our-apps-card__actions">
+							<a href="" class="btn btn_market">
+								<img src="img/appstore.webp" alt="Appstore btn" class="btn__bg">
+							</a>
+							<a href="" class="btn btn_market">
+								<img src="img/googleplay.webp" alt="Playmarket btn" class="btn__bg">
+							</a>
+						</div>
+						
+					</div>
+				</div>
+				<div class="our-apps-card our-apps-card_bt">
+					<div class="our-apps-card__main-pics">
+						<ImgWrap className='our-apps-card__bg img-wrap_cover'>
+							<picture>
+								<source srcset="img/apps-slide-02-bg-mob.webp" media="(max-width: 1200px)"/>
+								<img src="img/apps-slide-02-bg.webp" alt="Blocktopia Background">
+							</picture>
+						</ImgWrap>
+						<ImgWrap className='our-apps-card__bg-overlay img-wrap_cover'>
+							<picture>
+								<source srcset="img/apps-slide-02-bg-overlay-mob.webp" media="(max-width: 1200px)"/>
+								<img src="img/apps-slide-02-bg-overlay.webp" alt="Blocktopia Background Overlay">
+							</picture>
+						</ImgWrap>
+						<!-- Movable objects -->
+						<div class="our-apps-card__object our-apps-card__object_1">
+							<img src="img/cube-purple.webp" alt="Blocktopia cube purple">
+						</div>
+						<div class="our-apps-card__object our-apps-card__object_2">
+							<img src="img/cube-green.webp" alt="Blocktopia cube green">
+						</div>
+						<img src="img/apps-slide-02-game-title.webp" alt="Blocktopia title" class="our-apps-card__object our-apps-card__object_title">
+						<div class="our-apps-card__object our-apps-card__object_4">
+							<img src="img/apps-slide-02-cellphone-01.webp" alt="Blocktopia cellphone 1">
+						</div>
+						<div class="our-apps-card__object our-apps-card__object_5">
+							<img src="img/apps-slide-02-cellphone-02.webp" alt="Blocktopia cellphone 2">
+						</div>
+					</div>
+					<div class="our-apps-card__inner">
+						<div class="our-apps-card__info">
+							<div class="our-apps-card__info-header">
+								<h3 class="our-apps-card__title">Blocktopia</h3>
+							</div>
+							<div class="our-apps-card__text">
+								This tile-matching game is fast-paced and full of challenging levels, keeping you on the edge of your seat. Make your way through various stages by strategically matching blocks to clear the board while avoiding pitfalls and traps to advance.
+							</div>
+						</div>
+						<div class="our-apps-card__actions">
+							<a href="" class="btn btn_market">
+								<img src="img/appstore.webp" alt="Appstore btn" class="btn__bg">
+							</a>
+							<a href="" class="btn btn_market">
+								<img src="img/googleplay.webp" alt="Playmarket btn" class="btn__bg">
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="our-apps-card our-apps-card_ll">
+					<div class="our-apps-card__main-pics">
+						<ImgWrap className='our-apps-card__bg img-wrap_cover our-apps-card__bg_desc'>
+							<picture>
+								<source srcset="img/apps-slide-03-bg-mob.webp" media="(max-width: 1200px)"/>
+								<img src="img/apps-slide-03-bg.webp" alt="LastLand Background">
+							</picture>
+						</ImgWrap>
+						<!-- Movable objects -->
+						<div class="our-apps-card__object our-apps-card__object_1">
+							<img src="img/apps-slide-03-cellphone-01.webp" alt="LastLand cellphone">
+						</div>
+						<div class="our-apps-card__object our-apps-card__object_2">
+							<img src="img/apps-slide-03-cellphone-02.webp" alt="LastLand cellphone">
+						</div>
+						<div class="our-apps-card__object our-apps-card__object_3">
+							<img src="img/ll-monster-01.webp" alt="LastLand cellphone">
+						</div>
+					</div>
+					<div class="our-apps-card__inner">
+						<div class="our-apps-card__info">
+							<div class="our-apps-card__info-header">
+								<h3 class="our-apps-card__title">LastLand</h3>
+								<div class="our-apps-card__remark">Coming soon</div>
+							</div>
+							<div class="our-apps-card__text">
+								Take on the challenge of Last Land Hero and join L’akool Ordan in a daring journey across the lands. On his quest to save humanity from its darkest enemy, he will face monsters and bosses, traverse treacherous terrains and overcome obstacles with strategic strength and cunning tactics. Experience an epic story like no other as you join our hero in his mission to restore peace to the Last Land.
+							</div>
+						</div>
+						<!-- <div class="our-apps-card__actions">
+							<a href="" class="btn btn_market">
+								<img src="img/appstore.webp" alt="Appstore btn" class="btn__bg">
+							</a>
+							<a href="" class="btn btn_market">
+								<img src="img/googleplay.webp" alt="Playmarket btn" class="btn__bg">
+							</a>
+						</div> -->
+					</div>
+				</div>
+				<div class="our-apps-card our-apps-card_bbt">
+					<div class="our-apps-card__main-pics">
+						<ImgWrap className='our-apps-card__bg img-wrap_cover our-apps-card__bg_desc'>
+							<picture>
+								<source srcset="img/apps-slide-04-bg-mob.webp" media="(max-width: 1200px)"/>
+								<img src="img/apps-slide-04-bg.webp" alt="Bubbletopia Background">
+							</picture>
+						</ImgWrap>
+						<!-- Movable objects -->
+						<img src="img/skunk.webp" alt="Bubbletopia skunk" class="our-apps-card__object our-apps-card__object_1">
+						<img src="img/apps-slide-04-cellphone-01.webp" alt="Bubbletopia cellphone" class="our-apps-card__object our-apps-card__object_2">
+						
+					</div>
+					<img src="img/apps-slide-04-leaf-01.webp" alt="Bubbletopia leaf" class="our-apps-card__object our-apps-card__object_3">
+					<img src="img/apps-slide-04-leaf-02.webp" alt="Bubbletopia leaf" class="our-apps-card__object our-apps-card__object_4">
+					<div class="our-apps-card__inner">
+						<div class="our-apps-card__info">
+							<div class="our-apps-card__info-header">
+								<h3 class="our-apps-card__title">Bubbletopia</h3>
+							</div>
+							<div class="our-apps-card__text">
+								Challenge yourself with Bubble Shooter and join the marbles in an exciting journey across the board. Strategically match three or more of the same-colored marbles to clear the playing field before they reach the bottom line. Blast away to score maximum points and create powerful combos to break through obstacles and make your way up to higher difficulty levels.
+							</div>
+						</div>
+						<div class="our-apps-card__actions">
+							<a href="" class="btn btn_market">
+								<img src="img/appstore.webp" alt="Appstore btn" class="btn__bg">
+							</a>
+							<a href="" class="btn btn_market">
+								<img src="img/googleplay.webp" alt="Playmarket btn" class="btn__bg">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="philosophy" class="our-philosophy section-space">
+		<div class="our-philosophy__wrap">
+			<img src="img/our-philosophy-bg.svg" alt="Our philosophy background" class="our-philosophy__bg"></img>
+			<img src="img/our-philosophy-bg-decor.svg" alt="Our philosophy decor" class="our-philosophy__bg-decor"></img>
+			<div class="container our-philosophy__container">
+				<h2 class="our-philosophy__title section-title">
+					Our<br><div class="section-title__decorated">
+						<img src="img/philosophy-bg.svg" alt="Philosophy decor" class="section-title__decor section-title__decor_philosophy">
+						philosophy
+					</div>
+				</h2>
+				<div class="our-philosophy__char our-philosophy__char_archer">
+					<img src="img/archer.webp" alt="Archer" >
+				</div>
+				<div class="philosophy-info our-philosophy__info our-philosophy__info_1">
+					<h3 class="philosophy-info__title">Uniting Gamers Worldwide</h3>
+					<div class="philosophy-info__text">We recognize that games have the unique ability to connect people across cultures and distances, fostering meaningful relationships and shared experiences. Our ambition is to build a global community of players who resonate with our vision and values. Through our games, we aim to bring together like-minded individuals, encouraging collaboration and friendship in a space where everyone feels valued.</div>
+				</div>
+				<div class="our-philosophy__char our-philosophy__char_fish">
+					<div class="fish-char">
+						<img src="img/fish-body.webp" alt="Fish body" class="fish-char__body">
+						<img src="img/fish-hand-top.webp" alt="Fish top hand" class="fish-char__hand fish-char__hand_top">
+						<img src="img/fish-hand-bot.webp" alt="Fish bottom hand" class="fish-char__hand fish-char__hand_bot">
+					</div>
+				</div>
+				<div class="philosophy-info our-philosophy__info our-philosophy__info_2">
+					<h3 class="philosophy-info__title">Crafting Immersive Experiences</h3>
+					<div class="philosophy-info__text">At InGames, we believe that games are a medium for storytelling and a canvas for unforgettable experiences. We view gaming as an art form, where every pixel and line of code contributes to a larger narrative that engages the imagination and stirs emotions. Our focus is on developing cutting-edge, immersive games that empower players with creativity, fun, and a sense of passion.</div>
+				</div>
+				<div class="our-philosophy__char our-philosophy__char_owl">
+					<div class="owl-char">
+						<img src="img/owl-body.webp" alt="Fish body" class="owl-char__body">
+						<img src="img/owl-head.webp" alt="Fish top hand" class="owl-char__head">
+						<img src="img/owl-wings.webp" alt="Fish bottom hand" class="owl-char__wings">
+					</div>
+				</div>
+				<div class="philosophy-info our-philosophy__info our-philosophy__info_3">
+					<h3 class="philosophy-info__title">Fueling Creativity Through Games</h3>
+					<div class="philosophy-info__text">At InGames, we strive to be a source of creative expression, art, and inspiration for players and developers alike. We believe in the importance of innovation and are constantly exploring new ideas and technologies to push the boundaries of gaming. By nurturing creativity, we aim to create not just games, but movements that inspire others to dream, explore, and express themselves. Together, let’s embark on a journey that transcends the screen and creates a lasting impact on the world.</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="team" class="our-team section-space">
+		<div class="our-team__container container">
+			<h2 class="our-team__title section-title">
+				Our <div class="section-title__decorated">
+					<img src="img/team-decor.svg" alt="Team decor" class="section-title__decor section-title__decor_team">
+					Team
+				</div>
+			</h2>
+			<div class="our-team__body">
+				<div class="our-team__text-wrap">
+					<div class="our-team__text">
+						<p>At InGames, our team is a dynamic collective of talent and expertise, bringing together a wealth of experience from all corners of the game development industry.</p>
+						<p>Led by our visionary CEO, <b>Rami Ben Ahron</b>, and our Chief Product Officer, <b>Eli Yanovski</b>, each member of our team is united by a shared objective: to deliver the most <b>innovative and engaging entertainment</b> experiences possible.</p>
+						<p>Our dedicated developers, game and product designers, and marketing professionals work collaboratively to craft immersive worlds filled with imaginative experiences and meaningful connections. We <b>value creativity and diversity</b>, believing that the best ideas emerge from collaboration and a variety of perspectives.</p>
+						<p>With a passion for storytelling and a commitment to pushing the boundaries of gaming, our team is driven to create <b>not just games, but memorable journeys</b> that resonate with players around the globe. Together, we are shaping the future of gaming and inviting everyone to join us on this exciting advent</p>
+					</div>
+				</div>
+				<svg class="our-team__animation" overflow="visible" viewBox="0 0 666 566" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M310.831 455.812C321.225 448.883 323.808 447.623 326.642 441.701C328.406 438.016 326.989 434.74 324.28 431.843C322.989 430.457 321.855 428.504 317.666 428.315C302.925 427.591 303.303 442.205 299.901 445.512C297.634 447.749 295.114 450.079 292.059 450.93C284.216 453.135 276.184 456.505 271.428 463.119C267.082 469.167 267.271 478.395 272.72 484.222C277.665 489.482 293.854 496.002 302.642 482.364C310.831 469.67 305.76 459.213 310.831 455.812Z" fill="#7415ED"/>
+
+					<path class="team-animation__drop team-animation__drop_1" d="M305.413 53.598C285.602 30.8257 279.05 11.6441 255.428 17.9435C240.057 22.0381 238.671 39.3614 254.829 47.2986C265.727 52.653 291.397 61.7241 302.925 60.2438C304.468 60.0548 309.697 58.543 305.413 53.6294V53.598Z" fill="#014596"/>
+					<path class="team-animation__drop team-animation__drop_2" d="M138.732 112.749C138.385 92.7803 143.236 80.276 128.59 73.4412C119.046 68.9687 110.983 77.1578 115.802 88.0558C119.046 95.3945 128.18 110.922 134.637 115.049C135.519 115.616 138.795 117.064 138.7 112.749H138.732Z" fill="#448FEA"/>
+					<path class="team-animation__drop team-animation__drop_3" d="M71.9256 174.954C61.8151 163.615 58.4134 153.977 46.5706 157.284C38.8539 159.426 38.2554 168.151 46.4446 172.056C51.9566 174.671 64.9333 179.112 70.6972 178.293C71.4846 178.198 74.0989 177.411 71.9256 174.954Z" fill="#002245"/>
+					<path class="team-animation__drop team-animation__drop_4" d="M72.0197 357.228C55.1058 364.535 42.7276 364.819 42.0346 379.717C41.5937 389.418 51.3892 393.449 59.0114 385.512C64.1454 380.158 74.1614 366.897 75.4213 359.905C75.5788 358.96 75.7048 355.653 72.0197 357.228Z" fill="#448FEA"/>
+					<path class="team-animation__drop team-animation__drop_5" d="M238.039 456.285C231.929 465.009 225.913 468.884 230.102 476.411C232.811 481.325 238.858 480.317 240.181 474.112C241.094 469.923 242.008 460.379 240.496 456.568C240.307 456.064 239.33 454.395 238.008 456.285H238.039Z" fill="#002245"/>
+					<path class="team-animation__drop team-animation__drop_6" d="M425.546 393.952C426.491 425.291 419.152 445.008 442.271 455.465C457.326 462.268 469.83 449.26 462.051 432.283C456.791 420.818 442.145 396.66 431.908 390.266C430.522 389.416 425.357 387.18 425.546 393.952Z" fill="#448FEA"/>
+					<path class="team-animation__drop team-animation__drop_7" d="M627.601 344.439C636.861 356.471 639.601 366.298 651.633 363.841C659.475 362.235 660.704 353.573 652.798 349.132C647.475 346.109 634.845 340.786 629.018 341.195C628.231 341.258 625.553 341.857 627.569 344.439H627.601Z" fill="#014596"/>
+					<path class="team-animation__drop team-animation__drop_8" d="M537.356 83.8663C557.262 82.26 570.019 86.2916 575.94 71.2676C579.783 61.472 571.121 53.9443 560.57 59.4248C553.451 63.1414 538.553 73.2204 534.805 79.9292C534.301 80.8426 533.041 84.2128 537.356 83.8663Z" fill="#014596"/>
+					<path class="team-animation__drop team-animation__drop_9" d="M502.269 50.9511C521.482 35.1081 537.451 30.1316 532.789 10.5406C529.734 -2.21565 515.498 -3.759 508.6 9.40669C503.938 18.2888 495.907 39.2657 496.883 48.7778C497.009 50.0691 498.143 54.4157 502.3 50.9826L502.269 50.9511Z" fill="#7415ED"/>
+					
+					<g class="team-animation__big-gear">
+						<path d="M189.66 129.19C117.155 156.876 80.8388 238.075 108.525 310.58C136.21 383.086 217.409 419.402 289.915 391.716C362.421 364.031 398.737 282.832 371.051 210.326C343.365 137.82 262.166 101.504 189.66 129.19ZM250.701 289.068C234.89 295.115 217.189 287.178 211.141 271.367C205.094 255.555 213.031 237.854 228.843 231.807C244.654 225.759 262.355 233.696 268.403 249.508C274.45 265.319 266.513 283.021 250.701 289.068Z" fill="#448FEA"/>
+						<path d="M232.093 143.3L171.367 166.482L159.65 135.836C153.319 119.237 161.634 100.654 178.233 94.2914L178.831 94.0709C195.43 87.74 214.013 96.0552 220.376 112.654L232.093 143.3Z" fill="#448FEA"/>
+						<path d="M175.018 162.23L134.04 212.657L108.559 191.963C94.7636 180.75 92.6848 160.498 103.898 146.702L104.307 146.198C115.52 132.403 135.773 130.324 149.568 141.537L175.049 162.23H175.018Z" fill="#448FEA"/>
+						<path d="M135.015 207.144L124.747 271.303L92.3366 266.106C74.7929 263.303 62.8556 246.799 65.6588 229.255L65.7533 228.625C68.5565 211.081 85.0608 199.144 102.605 201.947L135.015 207.144Z" fill="#448FEA"/>
+						<path d="M122.856 266.043L146.038 326.769L115.391 338.486C98.7923 344.817 80.2091 336.502 73.8468 319.903L73.6263 319.305C67.2954 302.706 75.6106 284.123 92.2095 277.76L122.856 266.043Z" fill="#448FEA"/>
+						<path d="M141.79 323.116L192.217 364.093L171.523 389.574C160.31 403.37 140.058 405.449 126.262 394.267L125.758 393.858C111.963 382.645 109.884 362.392 121.097 348.597L141.79 323.116Z" fill="#448FEA"/>
+						<path d="M186.703 363.117L250.863 373.385L245.666 405.795C242.862 423.339 226.358 435.277 208.814 432.473L208.184 432.379C190.641 429.576 178.703 413.071 181.506 395.527L186.703 363.117Z" fill="#448FEA"/>
+						<path d="M245.602 375.275L306.328 352.094L318.045 382.74C324.376 399.339 316.061 417.922 299.462 424.285L298.864 424.505C282.265 430.836 263.682 422.521 257.319 405.922L245.602 375.275Z" fill="#448FEA"/>
+						<path d="M302.673 356.345L343.65 305.919L369.131 326.612C382.927 337.825 385.006 358.078 373.793 371.873L373.383 372.377C362.17 386.173 341.918 388.252 328.122 377.039L302.641 356.345H302.673Z" fill="#448FEA"/>
+						<path d="M342.645 311.43L352.913 247.271L385.324 252.468C402.867 255.271 414.805 271.776 412.001 289.319L411.907 289.949C409.104 307.493 392.599 319.43 375.056 316.627L342.645 311.43Z" fill="#448FEA"/>
+						<path d="M354.835 252.532L331.653 191.806L362.3 180.089C378.898 173.758 397.482 182.073 403.844 198.672L404.064 199.271C410.395 215.869 402.08 234.453 385.481 240.815L354.835 252.532Z" fill="#448FEA"/>
+						<path d="M335.904 195.459L285.477 154.482L306.171 129.001C317.384 115.205 337.636 113.126 351.432 124.339L351.936 124.749C365.731 135.962 367.81 156.214 356.597 170.01L335.904 195.491V195.459Z" fill="#448FEA"/>
+						<path d="M290.992 155.458L226.833 145.19L232.03 112.78C234.833 95.2365 251.337 83.2992 268.881 86.1024L269.511 86.1969C287.055 89.0001 298.992 105.504 296.189 123.048L290.992 155.458Z" fill="#448FEA"/>
+					</g>
+					<g class="team-animation__middle-gear">
+						<path d="M524.787 147.018C468.723 157.034 431.399 210.61 441.415 266.674C451.431 322.739 505.007 360.062 561.071 350.046C617.136 340.03 654.46 286.454 644.444 230.39C634.428 174.325 580.851 137.002 524.787 147.018ZM546.866 270.674C534.646 272.848 522.96 264.721 520.787 252.501C518.614 240.28 526.74 228.594 538.961 226.421C551.181 224.248 562.867 232.374 565.04 244.595C567.213 256.816 559.087 268.501 546.866 270.674Z" fill="#7415ED"/>
+						<path d="M553.516 162.356L506.176 170.797L501.892 146.891C499.593 133.946 508.192 121.599 521.137 119.268L521.609 119.174C534.554 116.874 546.901 125.473 549.232 138.418L553.516 162.324V162.356Z" fill="#7415ED"/>
+						<path d="M474.144 195.333L457.797 240.562L434.962 232.31C422.615 227.837 416.189 214.199 420.662 201.852L420.82 201.412C425.292 189.065 438.93 182.639 451.277 187.112L474.112 195.364L474.144 195.333Z" fill="#7415ED"/>
+						<path d="M463.026 280.532L494.019 317.289L475.467 332.943C465.419 341.416 450.395 340.125 441.923 330.077L441.608 329.699C433.135 319.652 434.427 304.628 444.474 296.155L463.026 280.501V280.532Z" fill="#7415ED"/>
+						<path d="M531.27 332.786L578.61 324.345L582.894 348.251C585.193 361.196 576.594 373.543 563.649 375.874L563.177 375.968C550.231 378.267 537.885 369.669 535.554 356.724L531.27 332.817V332.786Z" fill="#7415ED"/>
+						<path d="M610.622 299.808L626.969 254.578L649.804 262.83C662.151 267.303 668.576 280.941 664.104 293.288L663.946 293.729C659.473 306.076 645.835 312.501 633.489 308.028L610.653 299.776L610.622 299.808Z" fill="#7415ED"/>
+						<path d="M621.736 214.61L590.743 177.853L609.295 162.199C619.342 153.726 634.366 155.018 642.839 165.065L643.154 165.443C651.626 175.491 650.335 190.515 640.287 198.987L621.736 214.641V214.61Z" fill="#7415ED"/>
+					</g>
+					<g class="team-animation__small-gear">
+						<path d="M455.029 41.6282C429.643 26.7302 396.98 35.2029 382.051 60.5893C367.153 85.9758 375.625 118.638 401.012 133.568C426.398 148.497 459.061 139.993 473.99 114.606C488.92 89.22 480.416 56.5577 455.029 41.6282ZM422.146 97.6297C416.603 94.3855 414.776 87.2672 418.02 81.7237C421.264 76.1803 428.383 74.3535 433.926 77.5977C439.47 80.8418 441.328 87.9601 438.052 93.5036C434.808 99.047 427.69 100.905 422.146 97.6297Z" fill="#00CCFF"/>
+						<path d="M468.161 50.8885L442.208 35.644L449.925 22.5413C454.082 15.4545 463.216 13.0608 470.334 17.2499L470.586 17.4074C477.673 21.5649 480.067 30.699 475.878 37.8173L468.161 50.92V50.8885Z" fill="#00CCFF"/>
+						<path d="M416.946 34.2582L390.74 49.1247L383.244 35.8961C379.181 28.7463 381.701 19.6437 388.851 15.5806L389.103 15.4231C396.252 11.36 405.355 13.8797 409.418 21.0295L416.914 34.2582H416.946Z" fill="#00CCFF"/>
+						<path d="M376.945 70.259L376.725 100.37L361.512 100.244C353.291 100.181 346.645 93.4407 346.708 85.22V84.905C346.771 76.6844 353.512 70.0385 361.732 70.1015L376.945 70.2275V70.259Z" fill="#00CCFF"/>
+						<path d="M388.126 122.923L414.079 138.167L406.363 151.27C402.205 158.357 393.071 160.75 385.953 156.561L385.701 156.404C378.614 152.246 376.22 143.112 380.409 135.994L388.126 122.891V122.923Z" fill="#00CCFF"/>
+						<path d="M439.341 139.583L465.546 124.716L473.042 137.945C477.105 145.095 474.586 154.197 467.436 158.26L467.184 158.418C460.034 162.481 450.931 159.961 446.868 152.812L439.372 139.583H439.341Z" fill="#00CCFF"/>
+						<path d="M479.344 103.551L479.565 73.4399L494.778 73.5659C502.999 73.6289 509.644 80.3378 509.581 88.5899V88.9049C509.518 97.1256 502.778 103.771 494.557 103.708L479.344 103.582V103.551Z" fill="#00CCFF"/>
+					</g>
+					<path d="M569.093 392.88L556.567 396.389L560.238 409.491L572.764 405.982L569.093 392.88Z" fill="#E8A181"/>
+					<path d="M595.465 556.382L595.024 563.248L618.08 564.728C618.08 564.728 619.97 560.035 612.064 558.146C604.158 556.256 600.536 555.342 600.536 555.342L595.434 556.382H595.465Z" fill="#002245"/>
+					<path d="M555.312 553.799L554.871 560.634L531.815 559.153C531.815 559.153 530.524 554.271 538.587 553.389C546.682 552.539 550.367 552.066 550.367 552.066L555.28 553.767L555.312 553.799Z" fill="#002245"/>
+					<path d="M592.135 339.211C592.135 339.211 587.662 332.407 592.765 329.951C597.898 327.494 601.206 336.785 601.206 336.785L592.135 339.211Z" fill="#F4AE87"/>
+					<path d="M560.598 461.734L600.536 457.23L611.025 507.625L607.875 557.233L595.465 556.445C595.465 556.445 592 540.823 592.504 523.373C592.63 519.31 594.079 508.349 594.079 508.349L582.425 479.845C582.016 478.837 581.071 478.175 580 478.112H579.969C578.898 478.049 577.89 478.585 577.354 479.53L547.716 503.278C547.716 503.278 553.637 509.767 554.771 524.161C555.874 538.303 554.708 553.862 554.708 553.862L542.298 553.075L530.739 496.79L560.567 461.765L560.598 461.734Z" fill="#7415ED"/>
+					<path d="M591.341 422.394C581.041 416.945 571.214 418.74 577.64 402.929C583.026 389.637 593.514 377.29 594.144 373.605C594.742 369.92 591.152 339.872 591.152 339.872L601.168 336.785L608.664 370.613C609.01 373.133 608.853 374.581 608.507 376.188L598.68 401.858L591.341 422.394Z" fill="#00CCFF"/>
+					<path d="M601.899 333.791L588.028 337.977L589.739 343.646L603.609 339.46L601.899 333.791Z" fill="#014596"/>
+					<path d="M520.507 355.37C520.507 355.37 524.507 348.251 519.215 346.172C513.924 344.094 511.278 353.574 511.278 353.574L520.507 355.37Z" fill="#F4AE87"/>
+					<path d="M553.078 433.103C559.063 423.087 568.386 419.56 554.685 409.355C543.157 400.788 529.865 394.52 527.44 391.685C525.015 388.85 519.534 357.227 519.534 357.227L508.794 355.243L511.691 394.614C512.699 396.945 513.581 398.11 514.715 399.276L536.133 419.339L553.078 433.072V433.103Z" fill="#00CCFF"/>
+					<path d="M509.222 351.317L507.673 357.032L521.656 360.823L523.206 355.108L509.222 351.317Z" fill="#014596"/>
+					<path d="M551.81 406.457L577.858 399.15C584.063 397.417 590.394 401.386 591.528 407.717L601.103 458.08L559.306 463.151L544.503 420.756C542.266 414.772 545.637 408.158 551.778 406.457H551.81Z" fill="#00CCFF"/>
+					<mask id="mask0_106_4763" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="543" y="398" width="59" height="66">
+					<path d="M551.81 406.457L577.858 399.15C584.063 397.417 590.394 401.386 591.528 407.717L601.103 458.08L559.306 463.151L544.503 420.756C542.266 414.772 545.637 408.158 551.778 406.457H551.81Z" fill="white"/>
+					</mask>
+					<g mask="url(#mask0_106_4763)">
+						<path d="M565.131 398.883L562.614 399.588L580.695 464.129L583.212 463.423L565.131 398.883Z" fill="#230603"/>
+					</g>
+					<path d="M563.751 405.858L567.877 404.692L580.602 439.213L578.145 446.426C577.925 447.087 577.106 447.308 576.57 446.867L570.775 441.953L563.719 405.858H563.751Z" fill="#34BE8E"/>
+					<path d="M562.146 408.157C562.808 410.52 565.265 411.905 567.627 411.244C569.989 410.583 571.375 408.126 570.713 405.763C570.052 403.401 567.595 402.015 565.233 402.677C562.871 403.338 561.485 405.795 562.146 408.157Z" fill="#34BE8E"/>
+					<path d="M565.231 402.677C565.231 402.677 574.208 410.52 576.003 410.426C577.83 410.331 577.232 399.433 577.232 399.433L565.231 402.677Z" fill="#014596"/>
+					<path d="M565.262 402.676C565.262 402.676 561.672 414.046 560.065 414.897C558.459 415.747 553.325 406.14 553.325 406.14L565.262 402.676Z" fill="#014596"/>
+					<path d="M547.906 386.014C549.701 392.408 557.418 400.062 563.811 398.267C570.205 396.471 572.82 385.92 571.024 379.526C569.229 373.132 562.615 369.416 556.221 371.211C549.827 373.006 546.11 379.621 547.906 386.014Z" fill="#F4AE87"/>
+					<path d="M561.137 381.573C555.31 383.211 549.735 384.755 547.341 385.448C544.947 386.109 536.443 382.203 540.254 375.432C544.065 368.66 559.467 369.605 562.869 371.526C566.271 373.447 564.853 380.566 561.137 381.605V381.573Z" fill="#230603"/>
+					<mask id="mask1_106_4763" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="547" y="370" width="25" height="29">
+					<path d="M547.909 386.015C549.705 392.409 557.421 400.063 563.815 398.267C570.209 396.472 572.823 385.92 571.028 379.527C569.233 373.133 562.618 369.416 556.225 371.211C549.831 373.007 546.114 379.621 547.909 386.015Z" fill="white"/>
+					</mask>
+					<g mask="url(#mask1_106_4763)">
+						<path d="M568.824 394.204L567.06 387.936C567.06 387.936 570.336 382.109 567.91 379.306C565.485 376.503 562.587 380.786 562.587 380.786L558.556 377.416C558.556 377.416 553.642 377.353 552.004 374.55C550.398 371.715 553.012 365.668 556.13 365.195C559.28 364.723 576.54 369.321 577.895 371.999C579.249 374.676 574.021 387.401 574.021 387.401L568.761 394.204H568.824Z" fill="#230603"/>
+					</g>
+					<path d="M415.909 509.514L381.641 486.584L361.577 493.797L348.821 479.372C346.616 484.191 347.782 497.356 347.624 498.301L354.553 538.838C352.317 538.586 346.364 535.719 337.923 536.759C325.072 538.365 318.742 538.334 318.742 538.334L317.923 547.058C317.923 547.058 359.341 552.665 363.436 548.948C366.963 545.735 371.499 518.05 372.79 510.05C373.137 507.908 376.255 507.656 377.105 508.191L410.838 520.318C410.838 520.318 412.76 533.168 416.949 540.066C423.658 551.121 428.288 559.846 428.288 559.846L438.146 558.492L422.429 517.546C421.138 514.27 418.87 511.435 415.941 509.451L415.909 509.514Z" fill="#F4AE87"/>
+					<path d="M427.973 559.06L429.265 565.17L449.864 560.792C449.864 560.792 450.368 556.194 442.997 556.509C435.596 556.792 428.005 559.06 428.005 559.06H427.973Z" fill="#AD5549"/>
+					<path d="M280.659 429.197C280.659 429.197 279.116 421.921 274.234 423.685C269.352 425.449 273.257 433.512 273.257 433.512L280.659 429.197Z" fill="#F4AE87"/>
+					<path d="M320.628 538.24L313.51 537.074L308.817 557.579C308.817 557.579 312.754 559.972 315.62 553.138C318.455 546.303 320.66 538.208 320.66 538.208L320.628 538.24Z" fill="#AD5549"/>
+					<path d="M334.989 482.081C338.075 471.908 345.54 466.742 331.178 460.726C319.114 455.687 304.405 454.553 301.602 452.6C298.83 450.616 281.665 429.009 281.665 429.009L273.223 433.513L290.295 460.096C291.681 461.954 292.751 462.773 294.011 463.561L316.941 473.671L334.957 482.081H334.989Z" fill="#002245"/>
+					<path d="M282.536 425.746L270.934 432.037L273.502 436.772L285.103 430.481L282.536 425.746Z" fill="#34BE8E"/>
+					<path d="M348.882 390.425C348.882 390.425 343.433 385.386 347.402 382.078C351.402 378.771 356.347 386.267 356.347 386.267L348.85 390.425H348.882Z" fill="#F4AE87"/>
+					<path d="M366.488 464.159C356.189 461.608 347.905 465.356 350.11 449.954C351.968 437.009 358.519 423.78 358.236 420.378C357.952 416.977 348.157 391.181 348.157 391.181L356.346 386.236L370.425 414.52C371.307 416.662 371.465 417.985 371.496 419.465L368.441 444.348L366.457 464.128L366.488 464.159Z" fill="#002245"/>
+					<path d="M356.35 383.485L345.009 390.232L347.762 394.861L359.104 388.114L356.35 383.485Z" fill="#34BE8E"/>
+					<path d="M383.056 486.994L347.591 498.301L354.52 538.838C354.52 538.838 373.544 541.515 391.182 534.365C408.852 527.184 421.451 515.814 421.451 515.814C421.451 515.814 421.64 512.632 416.38 509.483C411.12 506.365 383.025 486.962 383.025 486.962L383.056 486.994Z" fill="#00CCFF"/>
+					<path d="M350.046 446.237L328.597 458.426C323.495 461.324 317.542 468.285 320.88 473.104L345.479 490.332L349.007 506.616L381.354 488.222L369.008 476.19L365.448 449.166C362.992 443.875 355.086 443.308 350.046 446.205V446.237Z" fill="#002245"/>
+					<mask id="mask2_106_4763" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="319" y="444" width="63" height="63">
+					<path d="M350.042 446.237L328.593 458.426C323.491 461.324 317.538 468.285 320.876 473.104L345.475 490.332L349.003 506.616L381.35 488.222L369.003 476.19L365.444 449.166C362.988 443.875 355.082 443.308 350.042 446.205V446.237Z" fill="white"/>
+					</mask>
+					<g mask="url(#mask2_106_4763)">
+						<path d="M344.71 455.499L342.426 456.771L370.651 507.459L372.935 506.188L344.71 455.499Z" fill="#014596"/>
+						<path d="M330.706 458.047C333.225 463.717 339.871 466.268 345.541 463.717C351.21 461.197 353.761 454.551 351.21 448.882C348.69 443.212 342.045 440.661 336.375 443.212C330.706 445.732 328.154 452.378 330.706 458.047Z" fill="#E8A181"/>
+					</g>
+					<path d="M341.07 442.178L330.747 448.045L336.878 458.835L347.202 452.968L341.07 442.178Z" fill="#E8A181"/>
+					<path d="M339.843 429.986C342.835 435.246 342.835 445.167 337.575 448.128C332.315 451.12 323.811 446.018 320.819 440.789C317.826 435.529 319.685 428.852 324.913 425.891C330.173 422.899 336.851 424.757 339.811 429.986H339.843Z" fill="#F4AE87"/>
+					<mask id="mask3_106_4763" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="319" y="424" width="23" height="26">
+					<path d="M339.841 429.985C342.834 435.245 342.613 444.82 337.574 448.127C332.314 451.592 323.81 446.332 320.817 440.788C317.951 435.465 319.683 428.851 324.912 425.89C330.172 422.898 336.849 424.756 339.81 429.985H339.841Z" fill="white"/>
+					</mask>
+					<g mask="url(#mask3_106_4763)">
+						<path d="M331.749 448.756L328.82 443.591C328.82 443.591 322.93 441.984 322.678 438.614C322.426 435.244 327.056 436.126 327.056 436.126C327.056 436.126 345.482 426.047 345.419 422.267C345.387 419.307 323.402 420.22 321.072 421.952C318.741 423.685 310.646 437.795 311.497 440.409C312.347 443.024 323.969 447.78 323.969 447.78L331.749 448.725V448.756Z" fill="#7415ED"/>
+					</g>
+					<path d="M122.31 389.521L114.348 399.648L124.03 407.259L131.992 397.131L122.31 389.521Z" fill="#63281D"/>
+					<path d="M68.6259 534.932L64.1218 539.625L79.8703 554.775C79.8703 554.775 84.1223 552.539 79.5553 546.365C74.9883 540.161 72.941 537.294 72.941 537.294L68.6259 534.932Z" fill="#7415ED"/>
+					<path d="M121.63 334.234C121.63 334.234 128.024 329.888 124.433 325.888C120.843 321.888 114.575 328.785 114.575 328.785L121.63 334.203V334.234Z" fill="#F4AE87"/>
+					<path d="M23.1712 429.733L20.8089 423.686L0.43042 431.592C0.43042 431.592 0.650898 436.379 8.21015 434.836C15.7379 433.293 19.2026 432.663 19.2026 432.663L23.1712 429.733Z" fill="#7415ED"/>
+					<path d="M104.497 501.767L104.623 454.269L86.0713 439.781L91.0478 420.41C85.6303 421.324 74.9844 429.985 74.0395 430.395L44.5584 455.718C43.456 453.639 39.4874 447.214 37.9756 445.45C29.2509 435.214 22.7626 428.914 22.7626 428.914L12.7781 433.828C12.7781 433.828 34.07 472.159 39.6449 473.545C44.4639 474.742 70.9213 462.49 78.5435 458.899C80.5593 457.954 82.6381 460.506 82.6381 461.514L89.284 496.601C89.284 496.601 81.1578 503.341 77.6301 510.964C72.0237 523.184 68.0236 535.657 68.0236 535.657L76.6852 542.649L104.465 501.767H104.497Z" fill="#002245"/>
+					<path d="M132.494 407.653L112.368 391.81C107.58 388.062 100.588 389.228 97.2808 394.33L74.0046 430.394L104.399 454.3L133.66 422.803C137.786 418.362 137.219 411.37 132.463 407.653H132.494Z" fill="#7415ED"/>
+					<path d="M92.114 407.244C103.106 406.236 111.012 411.37 111.138 395.181C111.233 381.605 106.54 366.991 107.358 363.558C108.177 360.093 122.225 335.116 122.225 335.116L114.571 328.785L95.7362 355.652C94.5078 357.731 94.1298 359.054 93.8778 360.566L93.1534 386.582L92.1455 407.212L92.114 407.244Z" fill="#7415ED"/>
+					<path d="M115.045 325.962L111.493 330.3L122.118 339L125.67 334.662L115.045 325.962Z" fill="#014596"/>
+					<path d="M185.723 384.597C185.723 384.597 188.432 377.353 193.157 379.904C197.881 382.455 192.653 390.172 192.653 390.172L185.723 384.597Z" fill="#F4AE87"/>
+					<path d="M121.723 430.52C120.117 419.59 113.251 413.102 128.936 409.165C142.102 405.858 157.409 406.96 160.559 405.385C163.708 403.779 184.685 384.219 184.685 384.219L192.654 390.172L170.984 414.834C169.252 416.504 168.055 417.196 166.638 417.826L141.503 424.661L121.692 430.52H121.723Z" fill="#7415ED"/>
+					<path d="M184.373 380.777L180.997 385.253L191.96 393.523L195.336 389.047L184.373 380.777Z" fill="#014596"/>
+					<path d="M132.494 407.653L112.368 391.81C107.58 388.062 100.588 389.228 97.2808 394.33L74.0046 430.394L104.399 454.3L133.66 422.803C137.786 418.362 137.219 411.37 132.463 407.653H132.494Z" fill="#7415ED"/>
+					<mask id="mask4_106_4763" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="74" y="389" width="63" height="66">
+					<path d="M132.494 407.654L112.368 391.811C107.58 388.063 100.588 389.228 97.2808 394.331L74.0046 430.394L104.399 454.301L133.66 422.804C137.786 418.363 137.219 411.37 132.463 407.654H132.494Z" fill="white"/>
+					</mask>
+					<g mask="url(#mask4_106_4763)">
+						<path d="M123.513 396.211L84.3173 446.128L86.3734 447.742L125.569 397.826L123.513 396.211Z" fill="#002245"/>
+					</g>
+					<path d="M122.29 402.834L119.109 400.314L95.4548 425.889L94.9823 433.071C94.9508 433.732 95.5808 434.236 96.2107 434.047L103.046 431.874L122.29 402.834Z" fill="white"/>
+					<path d="M122.827 405.385C121.378 407.212 118.732 407.527 116.905 406.078C115.079 404.63 114.764 401.984 116.212 400.157C117.661 398.33 120.307 398.015 122.134 399.464C123.961 400.913 124.276 403.559 122.827 405.385Z" fill="white"/>
+					<path d="M122.132 399.464C122.132 399.464 111.423 403.087 109.879 402.331C108.336 401.575 112.809 392.283 112.809 392.283L122.132 399.464Z" fill="#014596"/>
+					<path d="M122.131 399.463C122.131 399.463 121.154 410.708 122.225 412.031C123.328 413.353 131.296 406.834 131.296 406.834L122.099 399.463H122.131Z" fill="#014596"/>
+					<path d="M143.332 391.18C139.458 396.125 129.915 400.031 124.97 396.125C120.025 392.251 121.568 382.046 125.442 377.133C129.316 372.188 136.466 371.337 141.411 375.212C146.356 379.086 147.206 386.235 143.332 391.18Z" fill="#F4AE87"/>
+					<mask id="mask5_106_4763" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="121" y="372" width="25" height="26">
+					<path d="M143.336 391.181C139.462 396.126 129.919 400.032 124.974 396.126C120.028 392.252 121.572 382.047 125.446 377.133C129.32 372.188 136.47 371.338 141.415 375.212C146.36 379.086 147.21 386.236 143.336 391.181Z" fill="white"/>
+					</mask>
+					<g mask="url(#mask5_106_4763)">
+						<path d="M122.072 390.772L125.883 385.922C125.883 385.922 125.127 379.623 128.277 378.048C131.427 376.473 132.372 381.292 132.372 381.292C132.372 381.292 149.317 395.056 152.908 393.513C155.742 392.316 146.23 371.528 143.648 369.953C141.065 368.41 124.308 366.142 122.135 368C119.962 369.858 119.93 382.898 119.93 382.898L122.072 390.741V390.772Z" fill="#221972"/>
+					</g>
+				</svg>					
+			</div>
+		</div>
+	</section>
+	<section id="careers" class="careers section-space">
+		<img src="img/careers-bg.webp" alt="Careers background" class="careers__bg">
+		<div class="container careers__container">
+			<h2 class="careers__title section-title">
+				<div class="section-title__decorated">
+					<img src="img/careers-decor.svg" alt="Team decor" class="section-title__decor section-title__decor_careers">
+					Careers
+				</div>
+			</h2>
+			<div class="careers__body">
+				<div class="disclosure disclosure_vacancy-card" data-component=":disclosure:">
+					<div class="disclosure__header" data-elem="disclosure.toggle">
+						<div class="disclosure__title">Animation / Skinning Artist</div>
+						<div class="disclosure__icon"></div>
+					</div>
+					<div class="disclosure__body">
+						<div class="disclosure__inner vacancy-card" data-elem="disclosure.inner">
+							<div class="vacancy-card__header">
+								<div class="vacancy-condition">
+									<div class="vacancy-condition__icon icon-office"></div>
+									<div class="vacancy-condition__title">Office:</div>
+									<div class="vacancy-condition__value">Herzliya (Hybrid)</div>
+								</div>
+								<div class="vacancy-condition">
+									<div class="vacancy-condition__icon icon-remote"></div>
+									<div class="vacancy-condition__title">Remote:</div>
+									<div class="vacancy-condition__value">Israel</div>
+								</div>
+							</div>
+							<div class="vacancy-card__body">
+								<div class="vacancy-card__section">
+									<h3>Position Overview</h3>
+									<p>We are seeking a highly motivated and experienced Account Manager to oversee the management and growth of our app and website assets. As an Account Manager, you will be responsible for building and maintaining strong relationships with our partners, ensuring their satisfaction, and driving revenue growth through effective management of all assets. A solid understanding of USA sports and the ability to leverage that knowledge for promotional purposes is highly desirable.u can reach us through our contact form on our website or by emailing us at hello@inkyy.com We typically respond within 24 hours.</p>
+								</div>
+								<div class="vacancy-card__section">
+									<h3>Responsibilities</h3>
+									<ul class="vacancy-list">
+										<li>Develop and implement partner marketing strategies to drive user acquisition, engagement, and revenue growth.</li>
+										<li>Monitor and analyze affiliate performance, providing regular reports and recommendations to optimize campaigns and maximize ROI.</li>
+										<li>Resolve any issues or disputes that arise with partners in a timely and professional manner.</li>
+									</ul>
+								</div>
+								<div class="vacancy-card__section">
+									<h3>Desired</h3>
+									<ul class="vacancy-list">
+										<li>Proficiency with Unity</li>
+										<li>Experience with animation controllers in Unity</li>
+										<li>Proficiency with MotionBuilder</li>
+									</ul>
+								</div>
+								<div class="vacancy-card__section">
+									<h3>What we offer</h3>
+									<ul class="vacancy-list">
+										<li>Officially registered full-time employment</li>
+										<li>20 to 26 days of paid leave depending on the country in which your employment is registered</li>
+										<li>Medical support and fully paid leave if you or your child are sick</li>
+										<li>Individual development plan and regular feedback</li>
+										<li>Medical support and fully paid leave if you or your child are sick</li>
+										<li>Professional seminars, workshops, courses, and internal training programs</li>
+										<li>Opportunity to take an interest-free loan</li>
+										<li>Reimbursement of gym membership fees and a running club</li>
+										<li>Opportunity for counseling with psychologists</li>
+									</ul>
+								</div>
+							</div>
+							<div class="vacancy-card__footer">
+								<div class="vacancy-card__apply">
+									<span>Ready to apply?</span>
+									<a href="" class="btn btn_primary vacancy-card__apply-btn">
+										<span class="icon-file btn__icon "></span>
+										Send CV
+									</a>
+								</div>
+								<div class="vacancy-card__subscribe">
+									<span>Don't see the position that's right for you?</span>
+									<a href="" class="btn vacancy-card__subscribe-btn">
+										<span class="icon-bell btn__icon"></span>
+										Subscribe
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="disclosure disclosure_vacancy-card" data-component=":disclosure:">
+					<div class="disclosure__header" data-elem="disclosure.toggle">
+						<div class="disclosure__title">Motion designer</div>
+						<div class="disclosure__icon"></div>
+					</div>
+					<div class="disclosure__body">
+						<div class="disclosure__inner vacancy-card" data-elem="disclosure.inner">
+							<div class="vacancy-card__header">
+								<div class="vacancy-condition">
+									<div class="vacancy-condition__icon icon-office"></div>
+									<div class="vacancy-condition__title">Office:</div>
+									<div class="vacancy-condition__value">Herzliya (Hybrid)</div>
+								</div>
+								<div class="vacancy-condition">
+									<div class="vacancy-condition__icon icon-remote"></div>
+									<div class="vacancy-condition__title">Remote:</div>
+									<div class="vacancy-condition__value">Israel</div>
+								</div>
+							</div>
+							<div class="vacancy-card__body">
+								<div class="vacancy-card__section">
+									<h3>Position Overview</h3>
+									<p>We are seeking a highly motivated and experienced Account Manager to oversee the management and growth of our app and website assets. As an Account Manager, you will be responsible for building and maintaining strong relationships with our partners, ensuring their satisfaction, and driving revenue growth through effective management of all assets. A solid understanding of USA sports and the ability to leverage that knowledge for promotional purposes is highly desirable.u can reach us through our contact form on our website or by emailing us at hello@inkyy.com We typically respond within 24 hours.</p>
+								</div>
+								<div class="vacancy-card__section">
+									<h3>Responsibilities</h3>
+									<ul class="vacancy-list">
+										<li>Develop and implement partner marketing strategies to drive user acquisition, engagement, and revenue growth.</li>
+										<li>Monitor and analyze affiliate performance, providing regular reports and recommendations to optimize campaigns and maximize ROI.</li>
+										<li>Resolve any issues or disputes that arise with partners in a timely and professional manner.</li>
+									</ul>
+								</div>
+								<div class="vacancy-card__section">
+									<h3>Desired</h3>
+									<ul class="vacancy-list">
+										<li>Proficiency with Unity</li>
+										<li>Experience with animation controllers in Unity</li>
+										<li>Proficiency with MotionBuilder</li>
+									</ul>
+								</div>
+								<div class="vacancy-card__section">
+									<h3>What we offer</h3>
+									<ul class="vacancy-list">
+										<li>Officially registered full-time employment</li>
+										<li>20 to 26 days of paid leave depending on the country in which your employment is registered</li>
+										<li>Medical support and fully paid leave if you or your child are sick</li>
+										<li>Individual development plan and regular feedback</li>
+										<li>Medical support and fully paid leave if you or your child are sick</li>
+										<li>Professional seminars, workshops, courses, and internal training programs</li>
+										<li>Opportunity to take an interest-free loan</li>
+										<li>Reimbursement of gym membership fees and a running club</li>
+										<li>Opportunity for counseling with psychologists</li>
+									</ul>
+								</div>
+							</div>
+							<div class="vacancy-card__footer">
+								<div class="vacancy-card__apply">
+									<span>Ready to apply?</span>
+									<a href="" class="btn btn_primary vacancy-card__apply-btn">
+										<span class="icon-file btn__icon "></span>
+										Send CV
+									</a>
+								</div>
+								<div class="vacancy-card__subscribe">
+									<span>Don't see the position that's right for you?</span>
+									<a href="" class="btn vacancy-card__subscribe-btn">
+										<span class="icon-bell btn__icon"></span>
+										Subscribe
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="disclosure disclosure_vacancy-card" data-component=":disclosure:">
+					<div class="disclosure__header" data-elem="disclosure.toggle">
+						<div class="disclosure__title">Game designer</div>
+						<div class="disclosure__icon"></div>
+					</div>
+					<div class="disclosure__body">
+						<div class="disclosure__inner vacancy-card" data-elem="disclosure.inner">
+							<div class="vacancy-card__header">
+								<div class="vacancy-condition">
+									<div class="vacancy-condition__icon icon-office"></div>
+									<div class="vacancy-condition__title">Office:</div>
+									<div class="vacancy-condition__value">Herzliya (Hybrid)</div>
+								</div>
+								<div class="vacancy-condition">
+									<div class="vacancy-condition__icon icon-remote"></div>
+									<div class="vacancy-condition__title">Remote:</div>
+									<div class="vacancy-condition__value">Israel</div>
+								</div>
+							</div>
+							<div class="vacancy-card__body">
+								<div class="vacancy-card__section">
+									<h3>Position Overview</h3>
+									<p>We are seeking a highly motivated and experienced Account Manager to oversee the management and growth of our app and website assets. As an Account Manager, you will be responsible for building and maintaining strong relationships with our partners, ensuring their satisfaction, and driving revenue growth through effective management of all assets. A solid understanding of USA sports and the ability to leverage that knowledge for promotional purposes is highly desirable.u can reach us through our contact form on our website or by emailing us at hello@inkyy.com We typically respond within 24 hours.</p>
+								</div>
+								<div class="vacancy-card__section">
+									<h3>Responsibilities</h3>
+									<ul class="vacancy-list">
+										<li>Develop and implement partner marketing strategies to drive user acquisition, engagement, and revenue growth.</li>
+										<li>Monitor and analyze affiliate performance, providing regular reports and recommendations to optimize campaigns and maximize ROI.</li>
+										<li>Resolve any issues or disputes that arise with partners in a timely and professional manner.</li>
+									</ul>
+								</div>
+								<div class="vacancy-card__section">
+									<h3>Desired</h3>
+									<ul class="vacancy-list">
+										<li>Proficiency with Unity</li>
+										<li>Experience with animation controllers in Unity</li>
+										<li>Proficiency with MotionBuilder</li>
+									</ul>
+								</div>
+								<div class="vacancy-card__section">
+									<h3>What we offer</h3>
+									<ul class="vacancy-list">
+										<li>Officially registered full-time employment</li>
+										<li>20 to 26 days of paid leave depending on the country in which your employment is registered</li>
+										<li>Medical support and fully paid leave if you or your child are sick</li>
+										<li>Individual development plan and regular feedback</li>
+										<li>Medical support and fully paid leave if you or your child are sick</li>
+										<li>Professional seminars, workshops, courses, and internal training programs</li>
+										<li>Opportunity to take an interest-free loan</li>
+										<li>Reimbursement of gym membership fees and a running club</li>
+										<li>Opportunity for counseling with psychologists</li>
+									</ul>
+								</div>
+							</div>
+							<div class="vacancy-card__footer">
+								<div class="vacancy-card__apply">
+									<span>Ready to apply?</span>
+									<a href="" class="btn btn_primary vacancy-card__apply-btn">
+										<span class="icon-file btn__icon "></span>
+										Send CV
+									</a>
+								</div>
+								<div class="vacancy-card__subscribe">
+									<span>Don't see the position that's right for you?</span>
+									<a href="" class="btn vacancy-card__subscribe-btn">
+										<span class="icon-bell btn__icon"></span>
+										Subscribe
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="contact-us" class="contact-us section-space">
+		<div class="container contact-us__container">
+			<div class="contact-us__wrap">
+				<img src="img/contact-monster.webp" alt="Monster" class="contact-us__decor contact-us__decor_monster">
+				<div class="contact-us__body">
+					<img src="img/contact-tree.webp" alt="Tree" class="contact-us__decor contact-us__decor_tree-1">
+					<img src="img/contact-tree.webp" alt="Tree" class="contact-us__decor contact-us__decor_tree-2">
+					<form class="contact-us__form">
+						<div class="contact-us__form-body">
+							<h2 class="contact-us__title">Contact  Us</h2>
+							<input type="text" name="full-name" class="contact-us__input" required placeholder="Full name*">
+							<input type="text" name="company" class="contact-us__input" required placeholder="Company*">
+							<input type="email" name="email" class="contact-us__input" required placeholder="Email*">
+							<input type="tel" name="telephone" class="contact-us__input" required placeholder="Phone Number*">
+							<textarea name="message" class="contact-us__input" placeholder="Your message..."></textarea>
+						</div>
+						<button class="contact-us__btn btn btn_primary">Contact us</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
 </Layout>
-<style>
-	.text-link {
-		color: red;
-	}
-</style>

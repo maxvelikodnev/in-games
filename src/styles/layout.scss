@@ -12,11 +12,11 @@
 		--container-save-space: 24px;
 	}
 }
-.section-space {
-	padding-top: var(--section-space);
-}
 .section-space-bottom, .section-space {
 	padding-bottom: var(--section-space);
+}
+.section-space-top, .section-space {
+	padding-top: var(--section-space);
 }
 html {
 	&.splash-will-animate, &.splash-is-animating, &:not(.is-initialised) {
