@@ -749,3 +749,36 @@ function scrollToHash() {
 document.addEventListener("DOMContentLoaded", () => {
 	scrollToHash();
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+	document.addEventListener('wpcf7submit', function () {
+		console.log('wpcf7submit');
+
+		let messages = document.querySelectorAll('.wpcf7-response-output');
+console.log('messages', messages);
+		messages.forEach(message => {
+			message.style.opacity = '1';
+			message.style.transition = 'opacity 1s';
+
+			// Скрываем сообщение через 10 секунд
+			setTimeout(() => {
+				message.style.opacity = '0';
+			}, 10000);
+		});
+	});
+
+	// При каждом новом сообщении снова делаем его видимым
+	document.addEventListener('wpcf7invalid', () => resetMessage());
+	document.addEventListener('wpcf7spam', () => resetMessage());
+	document.addEventListener('wpcf7mailsent', () => resetMessage());
+	document.addEventListener('wpcf7mailfailed', () => resetMessage());
+
+	function resetMessage() {
+		let messages = document.querySelectorAll('.wpcf7-response-output');
+
+		messages.forEach(message => {
+			message.style.opacity = '1';
+		});
+	}
+});
+
