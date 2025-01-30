@@ -73,5 +73,6 @@ export class Disclosure {
 }
 export default function initDisclosures() {
 	const elems = document.querySelectorAll(`[data-component*=":disclosure:"]`);
+	console.log('elems', elems);
 	elems.forEach((elem) => new Disclosure(elem));
 }

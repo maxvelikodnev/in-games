@@ -13,7 +13,7 @@ const config = {
 				filename: '[name].js', // Файл выхода
   },
 	optimization: {
-		minimize: true
+		minimize: false
 	},
 	resolve: {
     extensions: ['.ts', '.js'], // Расширения, которые Webpack будет обрабатывать

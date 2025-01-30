@@ -72,12 +72,25 @@ class InitialAnimation {
 		setTimeout(this.init(), 1);
 	}
 	init () {
+
+		const hash = window.location.hash;
+		if (hash) {
+			const targetSection = document.querySelector(hash);
+			if (targetSection) {
+				scrollToSection(targetSection);
+			}
+		} else {
+			console.log('InitialAnimation');
+			document.documentElement.classList.add("splash-will-animate");
+			window.scrollTo({ top: 0, behavior: "instant" });
+			this.rebuildAnimations();
+			this.tl.play();
+		}
+
 		if (false) return; // Animation disabled (start not from the top or already animated);
-		console.log('InitialAnimation');
-		document.documentElement.classList.add("splash-will-animate");
-		window.scrollTo({ top: 0, behavior: "instant" });
-		this.rebuildAnimations();
-		this.tl.play();
+
+		//scrollToHash();
+
 		//document.documentElement.classList.remove("splash-will-animate");
 	}
 	rebuildAnimations() {
@@ -178,7 +191,7 @@ class InitialAnimation {
 				scale: 0.4,
 				x: window.innerWidth * 0.5 - msgInitialWidth * 0.48 - (orangeDecorBcr.left + orangeDecorBcr.width / 2),
 				y: window.innerHeight * 0.5 - (msgInitialWidth * 0.576) - (orangeDecorBcr.top + orangeDecorBcr.height / 2),
-				
+
 			}, {
 				scale: 1,
 				x: 0,
@@ -199,7 +212,7 @@ class InitialAnimation {
 
 			// Уменьшаем надпись до нормального размера
 			this.tl.fromTo(".hero-msg", {
-				scale: msgMidScale, 
+				scale: msgMidScale,
 			}, {
 				scale: 1,
 				duration: 0.8,
@@ -264,7 +277,7 @@ class InitialAnimation {
 				transformOrigin: "center bottom",
 			},"<-=0.15");
 
-			
+
 
 			this.tl.eventCallback("onStart", () => {
 				document.documentElement.classList.remove("splash-will-animate");
@@ -277,13 +290,14 @@ class InitialAnimation {
 	}
 }
 
+
 // class ForceCollector extends EventEmitter {
 // 	force = 0;
 // 	constructor(max) {
 // 		this.max = max;
 // 	}
 // 	update() {
-		
+
 // 	}
 // 	add(value) {
 
@@ -292,7 +306,7 @@ class InitialAnimation {
 
 // 	}
 // }
-
+if(document.querySelector("#hero"))
 new InitialAnimation();
 function scrollToSection(sectionElem) {
 	if (!sectionElem) return false;
@@ -323,13 +337,35 @@ class Navigation {
 		}), 25);
 
 		this.links.forEach(link => link.addEventListener("click", (e) => {
-			e.preventDefault();
-			app.drawers.close("main-menu");
 			const href = link.getAttribute("href");
-			if (href === "#hero") {
-				window.scrollTo({ top: 0, behavior: 'smooth' });
+
+			if (!href) return; // Если у ссылки нет href, ничего не делаем
+
+			// Проверяем, является ли ссылка якорной
+			if (href.charAt(0) === '#') {
+				e.preventDefault(); // Останавливаем стандартное поведение ссылки
+
+				const targetSection = document.querySelector(href);
+				const isCurrentPage = window.location.pathname === "/"; // Проверяем, на главной ли странице
+
+				if (targetSection) {
+					// Если секция есть на текущей странице, просто скроллим
+					app.drawers.close("main-menu");
+
+					if (href === "#hero") {
+						window.scrollTo({ top: 0, behavior: 'smooth' });
+					} else {
+						scrollToSection(targetSection);
+					}
+
+					history.pushState(null, null, href);
+				} else if (!isCurrentPage) {
+					// Если секции нет и мы НЕ на главной — переходим на главную с #hash
+					window.location.href = `/${href}`;
+				}
 			} else {
-				scrollToSection(this.sections.find(section => href.includes(section.getAttribute("id"))));
+				// Обычные ссылки ведут на другую страницу
+				window.location.href = href;
 			}
 		}));
 
@@ -411,7 +447,7 @@ class AboutUsAnimation {
 				target: window, // can be any element (selector text is fine)
 				type: "scroll", // comma-delimited list of what to listen for ("wheel,touch,scroll,pointer")
 				onUp: throttle((self) => gsap.to(".about-info, .about-us__quote", { inertia: {
-					y: { velocity: 10,  min: 0, max: 0 } 
+					y: { velocity: 10,  min: 0, max: 0 }
 				}}), 25), //, onComplete: function () { this.reverse() },
 				onDown: throttle((self) => gsap.to(".about-info, .about-us__quote", { inertia: {
 					y: { velocity: -10,  min: 0, max: 0 }
@@ -446,7 +482,7 @@ class OurAppsAnimation {
 		this.fullWidth = this.slideWidth * this.slides.length + this.gap * this.lastPositionIdx;
 		const calcPath = (pos) => this.lastPositionIdx === pos ? -this.fullWidth + this.body.offsetWidth : -(this.slideWidth + this.gap) * pos;
 		this.context?.revert();
-		
+
 		this.context = gsap.context(() => {
 			if (window.innerWidth >= 1200) {
 				this.slideTween = gsap.quickTo(".our-apps__body", "x", {
@@ -641,7 +677,7 @@ class OurPhilosophyAnimation {
 		});
 	}
 }
-new OurPhilosophyAnimation();
+if(document.querySelector("#apps")) new OurPhilosophyAnimation();
 
 class OurTeamAnimation {
 	constructor() {
@@ -689,9 +725,27 @@ class OurTeamAnimation {
 		});
 	}
 }
-new OurTeamAnimation();
+
+if(document.querySelector("#team")) new OurTeamAnimation();
 
 // Обновляем при изменении размеров экрана
 window.addEventListener('resize', setViewportHeight);
 
 document.documentElement.classList.add("is-initialised");
+
+
+// Функция проверки хэша в URL и прокрутки к нужному блоку
+function scrollToHash() {
+	const hash = window.location.hash;
+	if (hash) {
+		const targetSection = document.querySelector(hash);
+		if (targetSection) {
+			scrollToSection(targetSection);
+		}
+	}
+}
+
+// Запускаем функцию при загрузке страницы
+document.addEventListener("DOMContentLoaded", () => {
+	scrollToHash();
+});
