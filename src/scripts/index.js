@@ -36,6 +36,22 @@ Observer.create({
   onChangeY: () => humanScroll = true,
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+	document.querySelectorAll('section.ingamesWidgets').forEach(widget => {
+		let widgetContainer = widget.closest('.elementor-widget-container');
+		if (widgetContainer) {
+			let elementorElement = widgetContainer.closest('.elementor-element');
+
+			// Перемещаем виджет выше в DOM
+			elementorElement.parentNode.insertBefore(widget, elementorElement);
+
+			// Удаляем ненужные контейнеры
+			widgetContainer.remove();
+			elementorElement.remove();
+		}
+	});
+});
+
 
 const scrollEaseFunc =  (x) => x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
 if (!window.app.isMobile && window.app.hoverMedia.matches) {
@@ -51,7 +67,10 @@ if (!window.app.isMobile && window.app.hoverMedia.matches) {
 	});
 }
 
-
+const hideLoader = () => {
+	const loader = document.querySelector('#loader');
+	if(loader) loader.remove();
+}
 
 app.drawers.init();
 
@@ -72,7 +91,7 @@ class InitialAnimation {
 		setTimeout(this.init(), 1);
 	}
 	init () {
-
+		hideLoader();
 		const hash = window.location.hash;
 		if (hash) {
 			const targetSection = document.querySelector(hash);
@@ -86,6 +105,7 @@ class InitialAnimation {
 			this.rebuildAnimations();
 			this.tl.play();
 		}
+
 
 		if (false) return; // Animation disabled (start not from the top or already animated);
 
@@ -291,21 +311,6 @@ class InitialAnimation {
 }
 
 
-// class ForceCollector extends EventEmitter {
-// 	force = 0;
-// 	constructor(max) {
-// 		this.max = max;
-// 	}
-// 	update() {
-
-// 	}
-// 	add(value) {
-
-// 	}
-// 	sub(value) {
-
-// 	}
-// }
 if(document.querySelector("#hero"))
 new InitialAnimation();
 function scrollToSection(sectionElem) {
@@ -456,7 +461,7 @@ class AboutUsAnimation {
 		});
 	}
 }
-new AboutUsAnimation();
+if(document.querySelector("#hero")) new AboutUsAnimation();
 
 class OurAppsAnimation {
 	constructor() {
@@ -600,7 +605,7 @@ class OurAppsAnimation {
 		});
 	}
 }
-new OurAppsAnimation();
+if(document.querySelector("#apps")) new OurAppsAnimation();
 
 class OurPhilosophyAnimation {
 	constructor() {
@@ -626,11 +631,13 @@ class OurPhilosophyAnimation {
 				target: window, // can be any element (selector text is fine)
 				type: "scroll", // comma-delimited list of what to listen for ("wheel,touch,scroll,pointer")
 				onChangeY: throttle((self) => {
-						gsap.to(".our-philosophy__char_archer img", {
+						gsap.to(".our-philosophy__char_archer svg", {
 							inertia: {
 								rotation: { velocity: Math.sign(self.deltaY) * 3,  min: 0, max: 0 },
 							}
 						});
+
+
 						gsap.to(".our-philosophy__char_fish .fish-char", {
 							inertia: {
 								rotation: { velocity: Math.sign(self.deltaY) * 3,  min: 0, max: 0 },
@@ -648,6 +655,8 @@ class OurPhilosophyAnimation {
 								rotation: { velocity: Math.sign(self.deltaY) * 8,  min: 0, max: 0 },
 							}
 						});
+
+
 
 						gsap.to(".our-philosophy__char_owl .owl-char", {
 							inertia: {
@@ -677,7 +686,7 @@ class OurPhilosophyAnimation {
 		});
 	}
 }
-if(document.querySelector("#apps")) new OurPhilosophyAnimation();
+if(document.querySelector("#philosophy")) new OurPhilosophyAnimation();
 
 class OurTeamAnimation {
 	constructor() {
@@ -725,14 +734,12 @@ class OurTeamAnimation {
 		});
 	}
 }
-
 if(document.querySelector("#team")) new OurTeamAnimation();
 
 // Обновляем при изменении размеров экрана
 window.addEventListener('resize', setViewportHeight);
 
 document.documentElement.classList.add("is-initialised");
-
 
 // Функция проверки хэша в URL и прокрутки к нужному блоку
 function scrollToHash() {
@@ -752,10 +759,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener('DOMContentLoaded', function () {
 	document.addEventListener('wpcf7submit', function () {
-		console.log('wpcf7submit');
-
 		let messages = document.querySelectorAll('.wpcf7-response-output');
-console.log('messages', messages);
+
 		messages.forEach(message => {
 			message.style.opacity = '1';
 			message.style.transition = 'opacity 1s';
@@ -781,4 +786,3 @@ console.log('messages', messages);
 		});
 	}
 });
-
